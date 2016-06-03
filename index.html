@@ -1,21 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
   </head>
   <body>
-    <h3>Join Strings</h3>
-    <form class="form">
-      <label for="join_char">Join Character</label>
-      <input id="join_char" type="text" />
-      <br/>
-      <label for="join_content">Content</label>
-      <textarea id="join_content"></textarea>
-      <button class="btn btn-join">Join!</button>
-    </form>
-    <b>Output</b>:<br/>
-    <div id="join_output"></div>
-    <script type="text/javascript" src="js/string_tools.js">
+    <h1>String Tools</h1>
+    <hr />
+    <div class="container">
+      <h2>Join Strings</h2>
+      <form class="form">
+        <label for="join_char">Join Character</label><br/>
+        <input id="join_char" class="form-control" type="text" placeholder="Join character, e.g. '|', ',', etc" />
+        <br/>
+        <label for="join_content">Content</label><br/>
+        <textarea id="join_content" class="form-control" style="height: 300px;" placeholder="Stuff you want joined, one value per line"></textarea>
+        <br/>
+        <button class="btn btn-primary btn-join">Join!</button>
+      </form>
+      <h3>Output</h3>
+      <div id="join_output">Stuff will show up here after you press <b>Join</b></div>
+    </div>
+    <hr />
+    &copy; <a href="http://hacktoolkit.com">Hacktoolkit</a>
+    <script type="text/javascript" src="js/string_tools.js"></script>
   </body>
 </html>
