@@ -1,0 +1,11 @@
+{
+  "name": "hacktoolkit-strings",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "juice": "^2.0.0",
+    "lodash": "^4.13.1"
+  }
+}
