@@ -1,5 +1,6 @@
 const $ = require('jquery');
 const _ = require('lodash');
+const marked = require('marked');
 var juice = require('juice/client');
 
 $(function() {
@@ -24,6 +25,13 @@ $(function() {
         $('#inline_output').val(inlinedHTML);
     }
 
+    function doGenerateHTMLFromMarkdown() {
+        var markdownContent = $('#markdown_content').value();
+        var generatedHTML = marked(markdownContent);
+        $('#markdown_output').html(generatedHTML);
+    }
+
     $('.btn-join').on('click', doJoin);
     $('.btn-inline-css').on('click', doCssInline);
+    $('.btn-generate-md').on('click', doGenerateHTMLFromMarkdown);
 });
