@@ -34,7 +34,7 @@ $(function() {
 
     $('.btn-join').on('click', doJoin);
     $('.btn-inline-css').on('click', doCssInline);
-    $('.btn-generate-md').on('click', doGenerateHTMLFromMarkdown);
+    $('.btn-convert-md').on('click', doGenerateHTMLFromMarkdown);
 });
 
 },{"jquery":74,"juice/client":75,"lodash":79,"marked":80}],2:[function(require,module,exports){
