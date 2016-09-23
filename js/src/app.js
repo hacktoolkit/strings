@@ -33,5 +33,5 @@ $(function() {
 
     $('.btn-join').on('click', doJoin);
     $('.btn-inline-css').on('click', doCssInline);
-    $('.btn-generate-md').on('click', doGenerateHTMLFromMarkdown);
+    $('.btn-convert-md').on('click', doGenerateHTMLFromMarkdown);
 });
