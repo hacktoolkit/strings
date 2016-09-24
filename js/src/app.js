@@ -1,7 +1,7 @@
 const $ = require('jquery');
 const _ = require('lodash');
 const marked = require('marked');
-var juice = require('juice/client');
+const juice = require('juice');
 
 $(function() {
     function doJoin(e) {
@@ -25,8 +25,9 @@ $(function() {
         $('#inline_output').val(inlinedHTML);
     }
 
-    function doGenerateHTMLFromMarkdown() {
-        var markdownContent = $('#markdown_content').value();
+    function doGenerateHTMLFromMarkdown(e) {
+        e.preventDefault();
+        var markdownContent = $('#markdown_content').val();
         var generatedHTML = marked(markdownContent);
         $('#markdown_output').html(generatedHTML);
     }
