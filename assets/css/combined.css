@@ -1,0 +1,832 @@
+@import "../css/vendor/bootstrap-3.3.7.min.css";
+/* 568px */
+/* 768px */
+/* 1024px */
+/* 1280px */
+/*  
+Sticky Footer Solution
+by Steve Hatcher 
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+html,
+body {
+  height: 100%;
+}
+#wrap {
+  min-height: 100%;
+}
+#main {
+  overflow: auto;
+  padding-bottom: 45px;
+}
+/* must be same height as the footer */
+#footer {
+  position: relative;
+  margin-top: -45px;
+  /* negative value of footer height */
+  height: 45px;
+  clear: both;
+}
+/*Opera Fix*/
+body:before {
+  /* thanks to Maleika (Kohoutec)*/
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+  /* thank you Erik J - negate effect of float*/
+}
+/* IMPORTANT
+
+You also need to include this conditional style in the <head> of your HTML file to feed this style to IE 6 and lower and 8 and higher.
+
+<!--[if !IE 7]>
+<style type="text/css">
+#wrap {display:table;height:100%}
+</style>
+<![endif]-->
+
+*/
+/* curved clipping */
+/* 16*0.625=10 */
+/* gradients */
+/* http://gradientcss.com/linear-gradient */
+/* forms */
+/* color */
+/* positioning */
+/* animations */
+/* widgets */
+/* basic and primary colors */
+/* grays */
+/* PureCSS colors http://purecss.io/ */
+/* custom colors */
+/* this is a green */
+/* this is a maroon */
+/* this is a light blue */
+/* brand colors */
+/* http://flatuicolors.com/ */
+/* dimensions and borders */
+.rounded,
+.rounded-10,
+.rounded-medium {
+  -webkit-border-radius: 0.625em;
+  /* Safari prototype */
+  -moz-border-radius: 0.625em;
+  /* Gecko browsers */
+  border-radius: 0.625em;
+  /* Everything else - limited support at the moment */
+}
+.rounded-2_5,
+.rounded-tiny {
+  -webkit-border-radius: 0.15625em;
+  /* Safari prototype */
+  -moz-border-radius: 0.15625em;
+  /* Gecko browsers */
+  border-radius: 0.15625em;
+  /* Everything else - limited support at the moment */
+}
+.rounded-5,
+.rounded-small {
+  -webkit-border-radius: 0.3125em;
+  /* Safari prototype */
+  -moz-border-radius: 0.3125em;
+  /* Gecko browsers */
+  border-radius: 0.3125em;
+  /* Everything else - limited support at the moment */
+}
+.rounded-20,
+.rounded-large {
+  -webkit-border-radius: 1.25em;
+  /* Safari prototype */
+  -moz-border-radius: 1.25em;
+  /* Gecko browsers */
+  border-radius: 1.25em;
+  /* Everything else - limited support at the moment */
+}
+.rounded-40,
+.rounded-banner {
+  -webkit-border-radius: 2.5em;
+  /* Safari prototype */
+  -moz-border-radius: 2.5em;
+  /* Gecko browsers */
+  border-radius: 2.5em;
+  /* Everything else - limited support at the moment */
+}
+.rounded-left,
+.rounded-left-10,
+.rounded-left-medium {
+  /* Safari prototype */
+  -webkit-border-top-left-radius: 0.625em;
+  -webkit-border-bottom-left-radius: 0.625em;
+  /* Gecko browsers */
+  -moz-border-top-left-radius: 0.625em;
+  -moz-border-bottom-left-radius: 0.625em;
+  /* Everything else - limited support at the moment */
+  border-top-left-radius: 0.625em;
+  border-bottom-left-radius: 0.625em;
+}
+.rounded-left-2_5,
+.rounded-left-small {
+  /* Safari prototype */
+  -webkit-border-top-left-radius: 0.15625em;
+  -webkit-border-bottom-left-radius: 0.15625em;
+  /* Gecko browsers */
+  -moz-border-top-left-radius: 0.15625em;
+  -moz-border-bottom-left-radius: 0.15625em;
+  /* Everything else - limited support at the moment */
+  border-top-left-radius: 0.15625em;
+  border-bottom-left-radius: 0.15625em;
+}
+.rounded-left-5,
+.rounded-left-regular {
+  /* Safari prototype */
+  -webkit-border-top-left-radius: 0.3125em;
+  -webkit-border-bottom-left-radius: 0.3125em;
+  /* Gecko browsers */
+  -moz-border-top-left-radius: 0.3125em;
+  -moz-border-bottom-left-radius: 0.3125em;
+  /* Everything else - limited support at the moment */
+  border-top-left-radius: 0.3125em;
+  border-bottom-left-radius: 0.3125em;
+}
+.rounded-left-20,
+.rounded-left-large {
+  /* Safari prototype */
+  -webkit-border-top-left-radius: 1.25em;
+  -webkit-border-bottom-left-radius: 1.25em;
+  /* Gecko browsers */
+  -moz-border-top-left-radius: 1.25em;
+  -moz-border-bottom-left-radius: 1.25em;
+  /* Everything else - limited support at the moment */
+  border-top-left-radius: 1.25em;
+  border-bottom-left-radius: 1.25em;
+}
+.rounded-left-40,
+.rounded-left-banner {
+  /* Safari prototype */
+  -webkit-border-top-left-radius: 2.5em;
+  -webkit-border-bottom-left-radius: 2.5em;
+  /* Gecko browsers */
+  -moz-border-top-left-radius: 2.5em;
+  -moz-border-bottom-left-radius: 2.5em;
+  /* Everything else - limited support at the moment */
+  border-top-left-radius: 2.5em;
+  border-bottom-left-radius: 2.5em;
+}
+.rounded-right,
+.rounded-right-10,
+.rounded-right-medium {
+  /* Safari prototype */
+  -webkit-border-top-right-radius: 0.625em;
+  -webkit-border-bottom-right-radius: 0.625em;
+  /* Gecko browsers */
+  -moz-border-top-right-radius: 0.625em;
+  -moz-border-bottom-right-radius: 0.625em;
+  /* Everything else - limited support at the moment */
+  border-top-right-radius: 0.625em;
+  border-bottom-right-radius: 0.625em;
+}
+.rounded-right-2_5,
+.rounded-right-small {
+  /* Safari prototype */
+  -webkit-border-top-right-radius: 0.15625em;
+  -webkit-border-bottom-right-radius: 0.15625em;
+  /* Gecko browsers */
+  -moz-border-top-right-radius: 0.15625em;
+  -moz-border-bottom-right-radius: 0.15625em;
+  /* Everything else - limited support at the moment */
+  border-top-right-radius: 0.15625em;
+  border-bottom-right-radius: 0.15625em;
+}
+.rounded-right-5,
+.rounded-right-regular {
+  /* Safari prototype */
+  -webkit-border-top-right-radius: 0.3125em;
+  -webkit-border-bottom-right-radius: 0.3125em;
+  /* Gecko browsers */
+  -moz-border-top-right-radius: 0.3125em;
+  -moz-border-bottom-right-radius: 0.3125em;
+  /* Everything else - limited support at the moment */
+  border-top-right-radius: 0.3125em;
+  border-bottom-right-radius: 0.3125em;
+}
+.rounded-right-20,
+.rounded-right-large {
+  /* Safari prototype */
+  -webkit-border-top-right-radius: 1.25em;
+  -webkit-border-bottom-right-radius: 1.25em;
+  /* Gecko browsers */
+  -moz-border-top-right-radius: 1.25em;
+  -moz-border-bottom-right-radius: 1.25em;
+  /* Everything else - limited support at the moment */
+  border-top-right-radius: 1.25em;
+  border-bottom-right-radius: 1.25em;
+}
+.rounded-right-40,
+.rounded-right-banner {
+  /* Safari prototype */
+  -webkit-border-top-right-radius: 2.5em;
+  -webkit-border-bottom-right-radius: 2.5em;
+  /* Gecko browsers */
+  -moz-border-top-right-radius: 2.5em;
+  -moz-border-bottom-right-radius: 2.5em;
+  /* Everything else - limited support at the moment */
+  border-top-right-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
+}
+.rounded-bottom,
+.rounded-bottom-10 {
+  /* Safari prototype */
+  -webkit-border-bottom-left-radius: 0.625em;
+  -webkit-border-bottom-right-radius: 0.625em;
+  /* Gecko browsers */
+  -moz-border-bottom-left-radius: 0.625em;
+  -moz-border-bottom-right-radius: 0.625em;
+  /* Everything else - limited support at the moment */
+  border-bottom-left-radius: 0.625em;
+  border-bottom-right-radius: 0.625em;
+}
+/* positioning */
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center,
+.centered-text {
+  text-align: center;
+}
+.valign-top {
+  vertical-align: top;
+}
+.valign-middle {
+  vertical-align: middle;
+}
+.valign-bottom {
+  vertical-align: bottom;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.inline-block {
+  display: inline-block;
+}
+/* text */
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}
+.no-decoration {
+  text-decoration: none;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.strikethrough {
+  text-decoration: line-through;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+ul.unstyled {
+  margin: 0px;
+  padding: 0px;
+}
+ul.unstyled li {
+  list-style-type: none;
+}
+/* behavior */
+.no-highlight {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.hidden {
+  display: none;
+}
+.initially-hidden {
+  display: none;
+}
+.initially-hidden.visible {
+  display: block;
+}
+.show-hover {
+  visibility: hidden;
+}
+/* positioning */
+.voffset-2 {
+  margin-top: 2px;
+}
+.voffset-5 {
+  margin-top: 5px;
+}
+.voffset-10 {
+  margin-top: 10px;
+}
+.voffset-15 {
+  margin-top: 15px;
+}
+.voffset-20 {
+  margin-top: 20px;
+}
+.voffset-30 {
+  margin-top: 30px;
+}
+.voffset-40 {
+  margin-top: 40px;
+}
+.voffset-50 {
+  margin-top: 50px;
+}
+.voffset-60 {
+  margin-top: 60px;
+}
+.voffset-80 {
+  margin-top: 80px;
+}
+.voffset-100 {
+  margin-top: 100px;
+}
+.voffset-150 {
+  margin-top: 150px;
+}
+/* background and foreground color shortcut classes */
+.bg-white {
+  background-color: #ffffff;
+}
+.bg-black {
+  background-color: #000000;
+}
+.bg-orange {
+  background-color: #ffa500;
+}
+.bg-red {
+  background-color: #ff0000;
+}
+.bg-green {
+  background-color: #00ff00;
+}
+.bg-blue {
+  background-color: #0000ff;
+}
+.fg-white {
+  color: #ffffff;
+}
+.fg-black {
+  color: #000000;
+}
+.fg-orange {
+  color: #ffa500;
+}
+.fg-red {
+  color: #ff0000;
+}
+.fg-green {
+  color: #00ff00;
+}
+.fg-blue {
+  color: #0000ff;
+}
+.bg-gray-0 {
+  background-color: #000000;
+}
+.bg-gray-5 {
+  background-color: #0d0d0d;
+}
+.bg-gray-10 {
+  background-color: #1a1a1a;
+}
+.bg-gray-15 {
+  background-color: #262626;
+}
+.bg-gray-20 {
+  background-color: #333333;
+}
+.bg-gray-25 {
+  background-color: #404040;
+}
+.bg-gray-30 {
+  background-color: #4d4d4d;
+}
+.bg-gray-35 {
+  background-color: #595959;
+}
+.bg-gray-40 {
+  background-color: #666666;
+}
+.bg-gray-45 {
+  background-color: #737373;
+}
+.bg-gray-50 {
+  background-color: #808080;
+}
+.bg-gray-55 {
+  background-color: #8c8c8c;
+}
+.bg-gray-60 {
+  background-color: #999999;
+}
+.bg-gray-65 {
+  background-color: #a6a6a6;
+}
+.bg-gray-70 {
+  background-color: #b3b3b3;
+}
+.bg-gray-75 {
+  background-color: #bfbfbf;
+}
+.bg-gray-80 {
+  background-color: #cccccc;
+}
+.bg-gray-85 {
+  background-color: #d9d9d9;
+}
+.bg-gray-90 {
+  background-color: #e6e6e6;
+}
+.bg-gray-95 {
+  background-color: #f2f2f2;
+}
+.bg-gray-100 {
+  background-color: #ffffff;
+}
+.fg-gray-0 {
+  color: #000000;
+}
+.fg-gray-5 {
+  color: #0d0d0d;
+}
+.fg-gray-10 {
+  color: #1a1a1a;
+}
+.fg-gray-15 {
+  color: #262626;
+}
+.fg-gray-20 {
+  color: #333333;
+}
+.fg-gray-25 {
+  color: #404040;
+}
+.fg-gray-30 {
+  color: #4d4d4d;
+}
+.fg-gray-35 {
+  color: #595959;
+}
+.fg-gray-40 {
+  color: #666666;
+}
+.fg-gray-45 {
+  color: #737373;
+}
+.fg-gray-50 {
+  color: #808080;
+}
+.fg-gray-55 {
+  color: #8c8c8c;
+}
+.fg-gray-60 {
+  color: #999999;
+}
+.fg-gray-65 {
+  color: #a6a6a6;
+}
+.fg-gray-70 {
+  color: #b3b3b3;
+}
+.fg-gray-75 {
+  color: #bfbfbf;
+}
+.fg-gray-80 {
+  color: #cccccc;
+}
+.fg-gray-85 {
+  color: #d9d9d9;
+}
+.fg-gray-90 {
+  color: #e6e6e6;
+}
+.fg-gray-95 {
+  color: #f2f2f2;
+}
+.fg-gray-100 {
+  color: #ffffff;
+}
+.bg-flatui-turquoise {
+  background-color: #1abc9c;
+}
+.bg-flatui-green-sea {
+  background-color: #16a085;
+}
+.bg-flatui-sun-flower {
+  background-color: #f1c40f;
+}
+.bg-flatui-orange {
+  background-color: #f39c12;
+}
+.bg-flatui-emerald {
+  background-color: #2ecc71;
+}
+.bg-flatui-nephritis {
+  background-color: #27ae60;
+}
+.bg-flatui-carrot {
+  background-color: #e67e22;
+}
+.bg-flatui-pumpkin {
+  background-color: #d35400;
+}
+.bg-flatui-peter-river {
+  background-color: #3498db;
+}
+.bg-flatui-belize-hole {
+  background-color: #2980b9;
+}
+.bg-flatui-alizarin {
+  background-color: #e74c3c;
+}
+.bg-flatui-pomegranate {
+  background-color: #c0392b;
+}
+.bg-flatui-amethyst {
+  background-color: #9b59b6;
+}
+.bg-flatui-wisteria {
+  background-color: #8e44ad;
+}
+.bg-flatui-clouds {
+  background-color: #ecf0f1;
+}
+.bg-flatui-silver {
+  background-color: #bdc3c7;
+}
+.bg-flatui-wet-asphalt {
+  background-color: #34495e;
+}
+.bg-flatui-midnight-blue {
+  background-color: #2c3e50;
+}
+.bg-flatui-concrete {
+  background-color: #95a5a6;
+}
+.bg-flatui-asbestos {
+  background-color: #7f8c8d;
+}
+.fg-flatui-turquoise {
+  color: #1abc9c;
+}
+.fg-flatui-green-sea {
+  color: #16a085;
+}
+.fg-flatui-sun-flower {
+  color: #f1c40f;
+}
+.fg-flatui-orange {
+  color: #f39c12;
+}
+.fg-flatui-emerald {
+  color: #2ecc71;
+}
+.fg-flatui-nephritis {
+  color: #27ae60;
+}
+.fg-flatui-carrot {
+  color: #e67e22;
+}
+.fg-flatui-pumpkin {
+  color: #d35400;
+}
+.fg-flatui-peter-river {
+  color: #3498db;
+}
+.fg-flatui-belize-hole {
+  color: #2980b9;
+}
+.fg-flatui-alizarin {
+  color: #e74c3c;
+}
+.fg-flatui-pomegranate {
+  color: #c0392b;
+}
+.fg-flatui-amethyst {
+  color: #9b59b6;
+}
+.fg-flatui-wisteria {
+  color: #8e44ad;
+}
+.fg-flatui-clouds {
+  color: #ecf0f1;
+}
+.fg-flatui-silver {
+  color: #bdc3c7;
+}
+.fg-flatui-wet-asphalt {
+  color: #34495e;
+}
+.fg-flatui-midnight-blue {
+  color: #2c3e50;
+}
+.fg-flatui-concrete {
+  color: #95a5a6;
+}
+.fg-flatui-asbestos {
+  color: #7f8c8d;
+}
+/* printing */
+@media print {
+  .no-print {
+    display: none;
+  }
+  .no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-region-break-inside: avoid;
+  }
+  .page-break-after {
+    display: block;
+    position: relative;
+    page-break-after: always;
+    break-after: always;
+    -webkit-region-break-after: always;
+  }
+  .page-break-before {
+    display: block;
+    position: relative;
+    page-break-before: always;
+    break-before: always;
+    -webkit-region-break-before: always;
+  }
+  .align-left-print {
+    text-align: left;
+  }
+  .align-right-print {
+    text-align: right;
+  }
+  .float-left-print {
+    float: left;
+  }
+  .float-right-print {
+    float: right;
+  }
+}
+@media screen {
+  .print-only {
+    display: none;
+  }
+}
+/* media queries */
+@media screen and (min-width: 768px) {
+  .align-left-sm {
+    text-align: left;
+  }
+  .align-right-sm {
+    text-align: right;
+  }
+  .float-left-sm {
+    float: left;
+  }
+  .float-right-sm {
+    float: right;
+  }
+}
+@media screen and (min-width: 992px) {
+  .align-left-md {
+    text-align: left;
+  }
+  .align-right-md {
+    text-align: right;
+  }
+  .float-left-md {
+    float: left;
+  }
+  .float-right-md {
+    float: right;
+  }
+}
+/* common widgets */
+.star-rating,
+.fa-star-rating {
+  cursor: pointer;
+}
+.star-rating:hover label::before,
+.fa-star-rating:hover label::before {
+  content: "\f005" !important;
+}
+.star-rating label,
+.fa-star-rating label {
+  color: #ffffff;
+  font-family: 'FontAwesome';
+  font-size: 1em;
+}
+.star-rating label:first-of-type,
+.fa-star-rating label:first-of-type {
+  display: none;
+}
+.star-rating label::before,
+.fa-star-rating label::before {
+  content: "\f005";
+}
+.star-rating label:hover,
+.fa-star-rating label:hover {
+  cursor: pointer;
+}
+.star-rating label:hover ~ label::before,
+.fa-star-rating label:hover ~ label::before {
+  content: "\f006" !important;
+}
+.star-rating input,
+.fa-star-rating input {
+  display: none;
+}
+.star-rating input:checked ~ label::before,
+.fa-star-rating input:checked ~ label::before {
+  content: "\f006";
+}
+.cpq {
+  display: block;
+  position: relative;
+}
+.cpq h1 {
+  font-size: 3em;
+}
+.cpq h3 {
+  font-size: 1.5em;
+}
+.cpq .cpq-company {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.cpq .cpq-heading {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.cpq .cpq-heading.recipient {
+  font-size: 1.1em;
+}
+.cpq .cpq-contact .fa {
+  margin-right: 5px;
+}
+.cpq .cpq-summary {
+  width: 100%;
+}
+.cpq .cpq-items {
+  width: 100%;
+}
+.cpq .cpq-items .cpq-items-approve {
+  width: 50px;
+}
+.cpq .cpq-items .cpq-item-description {
+  width: 60%;
+}
+.cpq .cpq-items .cpq-items-unit-cost,
+.cpq .cpq-items .cpq-items-quantity,
+.cpq .cpq-items .cpq-items-amount {
+  width: 13.33333333%;
+}
+.cpq .cpq-items .cpq-item-unit-cost,
+.cpq .cpq-items .cpq-item-quantity,
+.cpq .cpq-items .cpq-item-amount {
+  text-align: right;
+}
+.cpq .cpq-items .cpq-total {
+  text-align: right;
+}
+.cpq .cpq-items tfoot {
+  border-top: 1px solid;
+}
+.cpq .qrcode-container {
+  width: 100%;
+}
+.cpq .qrcode-container img.qrcode {
+  width: 100px;
+  height: 100px;
+}
