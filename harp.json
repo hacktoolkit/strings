@@ -4,15 +4,15 @@
         "navbar_links": [
             {
                 "name": "Join Strings",
-                "url": "join_strings.html"
+                "url": "join_strings"
             },
             {
                 "name": "CSS Inliner",
-                "url": "css_inliner.html"
+                "url": "css_inliner"
             },
             {
                 "name": "Markdown to HTML",
-                "url": "markdown2html.html"
+                "url": "markdown2html"
             }
         ]
     }
