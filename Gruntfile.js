@@ -40,9 +40,9 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: '_harp/assets/css',
+                    cwd: 'public/assets/css',
                     src: ['*.css', '!*.min.css'],
-                    dest: '_harp/assets/css',
+                    dest: 'public/assets/css',
                     ext: '.min.css'
                 }]
             }
@@ -50,11 +50,11 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ['./_harp/assets/css'],
+                    paths: ['./public/assets/css'],
                     yuicompress: true
                 },
                 files: {
-                    './_harp/assets/css/combined.css': ['./_harp/assets/_less/combined.less']
+                    './public/assets/css/combined.css': ['./public/assets/_less/combined.less']
                 }
             }
         },
@@ -65,15 +65,15 @@ module.exports = function(grunt) {
             },
             less: {
                 files: [
-                    './_harp/assets/_less/**/*.less',
-                    './_harp/assets/htk/_less/**/*.less'
+                    './public/assets/_less/**/*.less',
+                    './public/assets/htk/_less/**/*.less'
                 ],
                 tasks: ['less']
             },
             cssmin: {
                 files: [
-                    './_harp/assets/css/**/*.css',
-                    '!./_harp/assets/css/**/*.min.css'
+                    './public/assets/css/**/*.css',
+                    '!./public/assets/css/**/*.min.css'
                 ],
                 tasks: ['cssmin']
             },

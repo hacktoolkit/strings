@@ -1,3 +1,5 @@
 compile:
 	grunt less && grunt cssmin
-	browserify js/src/app.js -o js/bundle.js
+	browserify public/assets/js/src/app.js -o public/assets/js/bundle.js
+	harp compile
+	cp -R www/* .
