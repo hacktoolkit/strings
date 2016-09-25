@@ -1,0 +1,12 @@
+doctype
+html(lang="en")
+  head
+    title #{title}      
+    link(rel="stylesheet" href="assets/css/combined.min.css")
+  body
+    .wrap
+      != partial('_shared/header')
+      .main
+        != yield
+    != partial('_shared/footer')
+    script(type="text/javascript" src="assets/js/bundle.js")

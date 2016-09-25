@@ -1,0 +1,14 @@
+.container
+  h2 Join Strings
+  form.form
+    label(for="join_char") Join Character
+    br
+    input(id="join_char" class="form-control" type="text" placeholder="Join character, e.g. '|', ',', etc")
+    br
+    label(for="join_content") Content
+    br
+    textarea(id="join_content" class="form-control" style="height: 300px;" placeholder="Stuff you want joined, one value per line")
+    br
+    button(class="btn btn-primary btn-join") Join!
+  h3 Output
+    textarea(id="join_output" class="form-control" style="height: 300px;" placeholder="Stuff will show up here after you press Join")

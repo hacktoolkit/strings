@@ -1,0 +1,19 @@
+{
+    "globals": {
+        "title": "String Tools | Hacktoolkit",
+        "navbar_links": [
+            {
+                "name": "Join Strings",
+                "url": "join_strings.html"
+            },
+            {
+                "name": "CSS Inliner",
+                "url": "css_inliner.html"
+            },
+            {
+                "name": "Markdown to HTML",
+                "url": "markdown2html.html"
+            }
+        ]
+    }
+}

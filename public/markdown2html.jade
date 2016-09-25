@@ -1,0 +1,11 @@
+.container
+  h2 Markdown to HTML
+  form.form
+    label(for="markdown_content") Markdown Content
+    textarea#markdown_content.form-control(style="height: 300px;" placeholder="Markdown content")
+    button.btn.btn-primary.btn-convert-md Generate Preview
+  br
+  b Markdown-Generated HTML Output
+  |:
+  br
+  #markdown_output

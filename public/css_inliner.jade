@@ -1,0 +1,13 @@
+.container
+  h2 Inline CSS
+  form.form
+    label(for="inline_content") Content
+    br
+    textarea#inline_content.form-control(style="height: 300px;" placeholder="HTML with CSS you want inlined")
+    label(for="preserve_styles")
+      input#preserve_styles(type="checkbox")
+      |&nbsp;Preserve Styles
+    br
+    button.btn.btn-primary.btn-inline-css Inline CSS
+  h3 Output
+  textarea#inline_output.form-control(style="height: 300px;" placeholder="HTML with CSS you want inlined")

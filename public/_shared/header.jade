@@ -1,0 +1,10 @@
+header
+  .header
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="/index.html") Hacktoolkit::String Tools
+        ul.nav.navbar-nav
+          each navbar_link in navbar_links
+            li
+              a(href=navbar_link.url) #{navbar_link.name}
