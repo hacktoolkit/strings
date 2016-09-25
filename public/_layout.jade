@@ -4,9 +4,9 @@ html(lang="en")
     title #{title}      
     link(rel="stylesheet" href="assets/css/combined.min.css")
   body
-    .wrap
+    #wrap
       != partial('_shared/header')
-      .main
+      #main
         != yield
     != partial('_shared/footer')
     script(type="text/javascript" src="assets/js/bundle.js")
