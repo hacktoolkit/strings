@@ -38374,10 +38374,19 @@ $(function() {
     }
 
     var GRAMMARLY_CHECK_INTERVAL = null;
+    var GRAMMARLY_CHECK_ATTEMPTS = 0;
+    var GRAMMARLY_CHECK_MAX_ATTEMPTS = 20;
     function detectGrammarly() {
-        if ($('body').attr('data-gr-c-s-loaded') === 'true') {
-            showAlert('<b>Heads up!</b> The Grammarly extension has been detected for your browser. You may want to disable it to prevent unintended changes to your text.', 'info');
+        if (GRAMMARLY_CHECK_ATTEMPTS > GRAMMARLY_CHECK_MAX_ATTEMPTS) {
             clearInterval(GRAMMARLY_CHECK_INTERVAL);
+        } else {
+            var hasGrammarlyExtension = $('body').attr('data-gr-c-s-loaded') === 'true';
+            var hasTextarea = !!$('textarea');
+            if (hasGrammarlyExtension && hasTextarea) {
+                showAlert('<b>Heads up!</b> The Grammarly extension has been detected for your browser. You may want to disable it to prevent unintended changes to your text.', 'info');
+                clearInterval(GRAMMARLY_CHECK_INTERVAL);
+            }
+            ++GRAMMARLY_CHECK_ATTEMPTS;
         }
     }
 
