@@ -38332,6 +38332,19 @@ const marked = require('marked');
 const juice = require('juice');
 
 $(function() {
+    const ALERT_TEMPLATE = _.template('<div class="alert alert-<%- level %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= msg %></div>');
+
+    function showAlert(msg, level) {
+        // http://getbootstrap.com/components/#alerts
+        // level: success, info, warning, danger
+        $('.page-alerts').append(
+            ALERT_TEMPLATE({
+                msg: msg,
+                level: level
+            })
+        );
+    }
+
     function doJoin(e) {
         e.preventDefault();
         var content = $('#join_content').val();
@@ -38360,9 +38373,26 @@ $(function() {
         $('#markdown_output').html(generatedHTML);
     }
 
-    $('.btn-join').on('click', doJoin);
-    $('.btn-inline-css').on('click', doCssInline);
-    $('.btn-convert-md').on('click', doGenerateHTMLFromMarkdown);
+    var GRAMMARLY_CHECK_INTERVAL = null;
+    function detectGrammarly() {
+        if ($('body').attr('data-gr-c-s-loaded') === 'true') {
+            showAlert('<b>Heads up!</b> The Grammarly extension has been detected for your browser. You may want to disable it to prevent unintended changes to your text.', 'info');
+            clearInterval(GRAMMARLY_CHECK_INTERVAL);
+        }
+    }
+
+    function initEventHandlers() {
+        $('.btn-join').on('click', doJoin);
+        $('.btn-inline-css').on('click', doCssInline);
+        $('.btn-convert-md').on('click', doGenerateHTMLFromMarkdown);
+    }
+
+    function init() {
+        GRAMMARLY_CHECK_INTERVAL = setInterval(detectGrammarly, 1000);
+    }
+
+    initEventHandlers();
+    init();
 });
 
 },{"jquery":73,"juice":74,"lodash":78,"marked":79}],87:[function(require,module,exports){

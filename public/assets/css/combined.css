@@ -830,3 +830,6 @@ ul.unstyled li {
   width: 100px;
   height: 100px;
 }
+.page-alerts:not(:empty) {
+  padding: 0px 20px;
+}

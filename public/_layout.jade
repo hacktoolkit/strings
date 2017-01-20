@@ -3,10 +3,13 @@ html(lang="en")
   head
     title #{title}      
     link(rel="stylesheet" href="assets/css/combined.min.css")
+    script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js")
   body
     #wrap
       != partial('_shared/header')
       #main
+        != partial('_shared/alerts')
         != yield
     != partial('_shared/footer')
     script(type="text/javascript" src="assets/js/bundle.js")
